@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.account-details {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.account-details p {
+    margin: 10px 0;
+}
+
+.account-details strong {
+    display: inline-block;
+    width: 150px;
+}

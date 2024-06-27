@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        } */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+
+        form input[type="number"],
+         input[type="password"],
+         input[type="text"]{
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #1a1616;
+            border-radius: 3px;
+            line-height: 25px;
+        }
+
+        H1 {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 40px;
+        }
+
+        .frm {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            max-width: 100%;
+        }
+
+        .add button {
+            margin-top: 20px;
+            height: 45px;
+            background-color: black;
+            color: white;
+            margin-right: 30px;
+            padding: 0 30px;
+            border-radius: 5px;
+        }
+
+        .add button:hover {
+            background-color: transparent;
+            color: black;
+            transform: scale(0.9) translateY(-1px);
+            transition: all 0.6s;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="add">
+        <H1>Send to Account</H1>
+        <div class="frm">
+            <form method="post">
+                {% csrf_token %}
+                <input type="number" placeholder="Account Number" name="account_number" required>
+                <input type="password" placeholder="Re-enter Account Number" name="confirm_account_number" required>
+                <input type="number" placeholder="Enter Amount" name="amount" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <center><button type="submit">Submit</button></center>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

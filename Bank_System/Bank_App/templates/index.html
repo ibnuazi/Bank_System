@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="federal"><img src="{% static 'Federal-logo1-min.png' %}" alt=""></div>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/Bank_App/login/">Login</a></li>
+                <li><a href="http://127.0.0.1:8000/Bank_App/signup/">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <center><div class="container">
+            <div class="sec-1">
+                <h2>Smarter Searching, Faster Results</h2>
+            </div>
+            <div class="sec-2">
+                <p>Experience the future of searching with our cutting-edge AI-powered search module designed
+                    exclusively
+                    for you. Uncover relevant information, documents, and resources instantly, as our intelligent system
+                    understands your queries and delivers precise results. Say goodbye to endless scrolling and hello to
+                    streamlined efficiency, as you navigate your bank's digital universe effortlessly.</p>
+            </div>
+        </div></center>
+       <div class="sec-3" style="background-image: url('{% static 'secure.jpg'%}');">
+            <h1> Smart and Simple <br><span>Online Banking</span></h1>
+            <center><div class="sec-3-1">
+                <form method="post">{% csrf_token %}
+                <input type="email" placeholder="Enter you Email" name="email"></form>
+            </div></center>
+            <center><button type="submit" class="btn1">Sign Up</button></center>
+        </div>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+    function myfunction(){
+
+    var body=document.getElementById('body').innerHTML;
+    var data=document.getElementById('data').innerHTML;
+    document.getElementById('body').innerHTML=data;
+       window.print()
+
+    }
+    </script>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+         button {
+            margin-top: 20px;
+            height: 45px;
+            background-color: black;
+            color: white;
+            margin-right: 30px;
+            padding: 0 30px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: transparent;
+            color: black;
+            transform: scale(0.9) translateY(-1px);
+            transition: all 0.6s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body id="body">
+ <div id="data">
+    <h1>DEPOSIT DETAILS</h1>
+    <form method="post">{% csrf_token %}
+        <table id="customers">
+            <tr>
+                <th>sl.no</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+
+            {% for i in a %}
+            {% if i.uid == id %}
+
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.amount}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+    </form>
+     </div>
+<button class="btn" onclick="myfunction()">Print</button>
+</body>
+
+</html>

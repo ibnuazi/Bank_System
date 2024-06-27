@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .money button{
+            height: 50px;
+            background-color: black;
+            color: white;
+            margin-right: 30px;
+            padding: 0 20px;
+            border-radius: 5px;
+        }
+        .money{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+        }
+        h2{
+            text-align: center;
+            margin-top: 100px;
+            font-size: 40px;
+        }
+        .money button:hover{
+            background-color: transparent;
+            color: black;
+            transform: scale(0.9) translateY(-1px);
+            transition: all 0.6s;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h2>Transaction</h2>
+        <div class="money">
+            <a href="http://127.0.0.1:8000/Bank_App/Send_Moneyto_Account/{{a.id}}"><button>Send Money</button></a>
+            <a href="http://127.0.0.1:8000/Bank_App/Add Amount/{{a.id}}"><button>Add Money</button></a>
+            <a href="http://127.0.0.1:8000/Bank_App/withdraw Amount/{{a.id}}"><button>Withdraw</button></a>
+        </div>
+    </section>
+</body>
+</html>

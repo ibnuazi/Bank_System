@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* style.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #4cae4c;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        p a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-bottom: 10px;
+                        border: 1px solid #ccc;
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 3px;
+            font-size: 16px;
+            text-align: center;
+            width:50%;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" value="{{a.firstname}}">
+
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" value="{{a.lastname}}">
+
+            <label for="Phone">Username</label>
+            <input type="text" id="Phone" name="phone" value="{{a.phone}}">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{a.email}}">
+
+            <label for="uploadBtn" class="custom-file-upload">Upload Image</label>
+            <input type="file" id="uploadBtn" name="image" value="{{a.image}}">
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
+
